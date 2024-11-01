@@ -8,6 +8,7 @@ In the present repository you will find the html rendered versions of my noteboo
 - numpy 1.26.4
 - pandas 2.2.2
 - random
+- pickle
 - matplotlib 3.9.2
 - seaborn 0.13.2
 - sklearn 1.5.2
