@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Predicting-Life-Expectancy"><strong>Predicting Life Expectancy</strong><a class="anchor-link" href="#Predicting-Life-Expectancy">¶</a></h1><p>In this notebook we will tackle the well known Life Expectancy dataset. Data can be found <a href="https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who">here on Kaggle</a>. Our goal will be to see if how well can we predict Life expectancy for an unkown location, based on health and economy factors. Then we will try to identify which factors are most important for this task. By identifying those, we can help future public policies for places that wish to improve Life expectancy for its inhabitants.</p>
+<h1 id="Predicting-Life-Expectancy"><strong>Predicting Life Expectancy</strong><a class="anchor-link" href="#Predicting-Life-Expectancy">¶</a></h1><p>In this notebook we will tackle the well known Life Expectancy dataset. Data can be found <a href="https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who">here on Kaggle</a>. Our goal will be to see how well can we predict Life expectancy for an unkown location, based on health and economy factors. Then we will try to identify which factors are most important for this task. By identifying those, we can for example help future public policies for places that wish to improve Life expectancy.</p>
 <h3 id="A---Data-exploration-and-Preprocessing"><strong>A - Data exploration and Preprocessing</strong><a class="anchor-link" href="#A---Data-exploration-and-Preprocessing">¶</a></h3><p>Firstly let's load necessary libraries :</p>
 </div>
 </div>
@@ -7833,13 +7833,13 @@ This represents roughly 5.547991831177672 % of missing values.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span><span class="p">,</span> <span class="n">KNNImputer</span>
 <span class="n">mean_imp</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">)</span>
 <span class="n">med_imp</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"median"</span><span class="p">)</span>
-<span class="n">knn_imp</span> <span class="o">=</span> <span class="n">KNNImputer</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s2">"distance"</span><span class="p">)</span> <span class="c1"># Close neighbors have greater influence on imputation value than further neighbors.</span>
+<span class="n">knn_imp</span> <span class="o">=</span> <span class="n">KNNImputer</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s2">"distance"</span><span class="p">)</span> <span class="c1"># close neighbors have greater influence on imputation value than further neighbors.</span>
 
 <span class="n">mean_imp_features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mean_imp</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">datasets</span><span class="p">[</span><span class="s1">'raw_no_Country_Year'</span><span class="p">][</span><span class="n">cols_with_NAs</span><span class="p">]),</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols_with_NAs</span><span class="p">)</span>
 <span class="n">mean_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">datasets</span><span class="p">[</span><span class="s1">'raw_no_Country_Year'</span><span class="p">][</span><span class="n">cols_no_NAs</span><span class="p">],</span> <span class="n">mean_imp_features</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -7934,7 +7934,7 @@ There are 0 NAs in this dataframe
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>We have handled missing values, adjusting scales and transformed categorical features : we are now ready to start training ML models.</p>
-<h3 id="B---Models"><strong>B - Models</strong><a class="anchor-link" href="#B---Models">¶</a></h3><p>Before starting training models, we need to define our training strategy. Since we have a reasonable amount of data, we can will use a 5-fold cross-validation protocol to evaluate and compare models. This cross-validation step will be done on a subset of our data.</p>
+<h3 id="B---Models"><strong>B - Models</strong><a class="anchor-link" href="#B---Models">¶</a></h3><p>Before starting training models, we need to define our training strategy. Since we have a reasonable amount of data, we will use a 5-fold cross-validation protocol to evaluate and compare models. This cross-validation step will be done on a subset of our data.</p>
 <p>More clearly said, we will do a simple Train/Test split where we will use 80% for the training set and 20% for the test set. Cross-validation will be performed on the training set.</p>
 </div>
 </div>
@@ -8321,7 +8321,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><span style="color:magenta"> From these plots, one could argue that under-five deaths, infant deaths, Measles, Population, Hepatitis B and Total expenditure are to be removed from features since they correspond to less correlated features. However, apart from Population which correlation with Life expectancy is close to 0, all other features could still be of value for the model. To truly identify which are to be removed, we will be using the <code>SequentialFeatureSelector</code> from sklearn.</span></p>
+<p><span style="color:magenta"> From these plots, one could argue that under-five deaths, infant deaths, Measles, Population, Hepatitis B and Total expenditure are to be removed from features since they correspond to less correlated features. However, apart from Population which correlation with Life expectancy is close to 0, all other features could still be of value for the model. To truly identify which are to be removed, we will be using an ascending Feature Selection algorithm.</span></p>
 </div>
 </div>
 </div>
@@ -8772,18 +8772,12 @@ Difference with previous best : -0.03975903073205789
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">optuna</span>
 
 <span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">trial</span><span class="p">):</span>
-    <span class="c1"># n_estimators = trial.suggest_int("n_estimators", 608, 610)</span>
-    <span class="c1"># max_depth = trial.suggest_int("max_depth", 89, 92)</span>
-    <span class="c1"># criterion = trial.suggest_categorical("criterion", ['squared_error', 'absolute_error', 'friedman_mse','poisson'])</span>
-    <span class="c1"># min_samples_split = trial.suggest_int("min_samples_split", 2, 3)</span>
-    <span class="c1"># min_samples_leaf = trial.suggest_int("min_samples_leaf", 1, 2)</span>
-    <span class="c1"># max_features = trial.suggest_categorical("max_features", ["sqrt", "log2", None])</span>
     <span class="n">n_estimators</span> <span class="o">=</span> <span class="n">trial</span><span class="o">.</span><span class="n">suggest_int</span><span class="p">(</span><span class="s2">"n_estimators"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
     <span class="n">max_depth</span> <span class="o">=</span> <span class="n">trial</span><span class="o">.</span><span class="n">suggest_int</span><span class="p">(</span><span class="s2">"max_depth"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
     <span class="n">criterion</span> <span class="o">=</span> <span class="n">trial</span><span class="o">.</span><span class="n">suggest_categorical</span><span class="p">(</span><span class="s2">"criterion"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'squared_error'</span><span class="p">,</span> <span class="s1">'absolute_error'</span><span class="p">,</span> <span class="s1">'friedman_mse'</span><span class="p">,</span><span class="s1">'poisson'</span><span class="p">])</span>
@@ -9526,11 +9520,10 @@ Difference with previous best : -0.03975903073205789
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1.664588233606974 {'n_estimators': 609, 'max_depth': 89, 'criterion': 'squared_error', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'log2'}</span>
-<span class="n">trial</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">best_trial</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">trial</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">best_trial</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"MAPE: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">trial</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Best hyperparameters: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">trial</span><span class="o">.</span><span class="n">params</span><span class="p">))</span>
@@ -9784,7 +9777,7 @@ Shapley values are estimations of how much a feature's value impacts model outpu
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In the above plots we are showing how the model arrived to its prediction based on the observation it was asked to predict. You can read each line of this plot like this "Because the Feature F had the value X in this observation, the model likely modified its predicted value in this direction" the intensity of the modification correlated to the shapley value of this feature.</p>
+<p>In the above plots we are showing how the model arrived to its prediction based on the observation it was asked to predict. You can read each line of this plot like this "Because the Feature F had the value X in this observation, the model likely modified its predicted value in this direction" the intensity of the modification is correlated to the shapley value of this feature.</p>
 <p>Let's look at some observations the model got wrong.</p>
 </div>
 </div>
@@ -9887,21 +9880,8 @@ Shapley values are estimations of how much a feature's value impacts model outpu
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In this plot, the wider points are scattered, the more important the feature is to make predictions (high absolute Shapley values). For each feature, the color of points shows how high or small the value of the feature was for this point. When point colors tend to be homogeneous we can directly see how feature value tends to impact model output. For example, very high values of HIV/AIDS have huge impacts on model ouptut whereas low to very low ones barely impact model ouputs. This means that the model learned to identify any increase of HIV/AIDS as a major indicator that Life expectancy would be lower.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<p>In this plot, the wider points are scattered, the more important the feature is to make predictions (high absolute Shapley values). For each feature, the color of points shows how high or small the value of the feature was for this point. When point colors tend to be homogeneous we can directly see how feature value tends to impact model output. For example, very high values of HIV/AIDS have huge negative impacts on model ouptut whereas low to very low ones barely impact model ouputs. This means that the model learned to identify any increase of HIV/AIDS as a major indicator that Life expectancy would be lower.</p>
+<p>I will conclude the project on this note as we have applied a careful Machine Learning approach on this task and even delved into Model explainability and error analysis.</p>
 </div>
 </div>
 </div>
