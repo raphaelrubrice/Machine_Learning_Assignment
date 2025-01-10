@@ -1,10 +1,10 @@
-# Classification task keywords : 
+# AP_PROG Machine Learning Assignment
+## Classification task keywords : 
 **scRNAseq data-based tissue prediction , Highly unbalanced, Very High dimensionality**
-# Regression task keywords : 
+## Regression task keywords : 
 **Life expectancy prediction, Model explainability, Error Analysis**  
 
-# [Website of this reposiory](https://raphaelrubrice.github.io/Machine_Learning_Assignment/)
-## AP_PROG Machine Learning Assignment
+## [Website of this reposiory](https://raphaelrubrice.github.io/Machine_Learning_Assignment/)
 Created for the evaluated assignment of the AP_PROG Machine Learning course at AgroParisTech given by Mr. Vincent GUIGUE. The details of the asisgnment are given [here](https://github.com/vguigue/tuto_sklearn) (in french). 
 
 In the present repository you will find the html rendered versions of my notebooks for the Classification task I decided to investigate and another for the Regression task I chose. I also made available the actual notebooks for anyone wanting to play with the data and further investigate the problem themselves.   
